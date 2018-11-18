@@ -47,10 +47,10 @@ Into:
 import matchCase from 'functional-match-case';
 
 const match = matchCase({
-  [A]: resultA,
-  [B]: resultA,
-  [C]: resultB,
-  [D]: functionC, // just the ref, will be called when needed
+  A: resultA,
+  B: resultA,
+  C: resultB,
+  D: functionC, // just the ref, will be called when needed
 })(defaultValue);
 
 // Then whenever needed:
@@ -65,16 +65,16 @@ match(someValue);
 ```javascript
 // fileA.js
 export const someMatchCase = {
-  [A]: resultA,
-  [B]: resultB,
+  A: resultA,
+  B: resultB,
 };
 ```
 
 ```javascript
 // fileB.js
 export const anotherMatchCase = {
-  [C]: resultC,
-  [D]: functionD,
+  C: resultC,
+  D: functionD,
 }
 ```
 
@@ -83,7 +83,7 @@ export const anotherMatchCase = {
 export const yetAnotherMatchCase = {
    ...someMatchCase,
    ...anotherMatchCase,
-   [F]: resultF,
+   F: resultF,
 };
 
 ```
